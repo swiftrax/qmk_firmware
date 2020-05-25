@@ -21,7 +21,7 @@
 
 
 #define ENCODERS_PAD_A { D4, D6, D7 }
-#define ENCODERS_PAD_B { D0, D0, D0 }
+#define ENCODERS_PAD_B { B4, B4, B4 }
 #define ENCODER_RESOLUTION 4
 
 /* COL2ROW, ROW2COL*/
