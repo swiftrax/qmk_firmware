@@ -74,6 +74,12 @@ void encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             tap_code(KC_UP);
         }
+     } else if (index == 2) { /* Third encoder */
+        if (clockwise) {
+            tap_code(KC_DOWN);
+        } else {
+            tap_code(KC_UP);
+        }
     }
 }
 
