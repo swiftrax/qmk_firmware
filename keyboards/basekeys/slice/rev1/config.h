@@ -19,31 +19,55 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* USB Device descriptor parameter */
+<<<<<<< HEAD
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x9876
 #define DEVICE_VER      0x0003
+=======
+#define VENDOR_ID       0x04D8
+#define PRODUCT_ID      0xEC17
+#define DEVICE_VER      0x0002
+>>>>>>> 0fcefdc0136cb3f6c49a678d07d3430455a008d1
 #define MANUFACTURER    2Moons
 #define PRODUCT         Slice
 #define DESCRIPTION     A custom keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 10
+<<<<<<< HEAD
 #define MATRIX_COLS 18
 
 // wiring of each half
 #define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
 #define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B6, B5}
+=======
+#define MATRIX_COLS 9
+
+// wiring of each half
+#define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
+#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B6, B5 }
+>>>>>>> 0fcefdc0136cb3f6c49a678d07d3430455a008d1
 
 #define DIODE_DIRECTION COL2ROW
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
+<<<<<<< HEAD
 
 #define DIODE_DIRECTION COL2ROW
 
 /* serial.c configuration for split keyboard */
 #define SOFT_SERIAL_PIN D2
 #define SPLIT_HAND_PIN B6
+=======
+/* serial.c configuration for split keyboard */
+#define SOFT_SERIAL_PIN D2
+
+/* Select hand configuration */
+//#define EE_HANDS
+#define MASTER_LEFT
+//#define MASTER_RIGHT
+>>>>>>> 0fcefdc0136cb3f6c49a678d07d3430455a008d1
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright 2018 Salicylic_acid3
+=======
+/* Copyright 2020 2Moons
+>>>>>>> 0fcefdc0136cb3f6c49a678d07d3430455a008d1
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

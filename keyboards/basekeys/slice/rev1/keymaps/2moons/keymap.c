@@ -1,7 +1,10 @@
 #include QMK_KEYBOARD_H
 #include "keymap_jp.h"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0fcefdc0136cb3f6c49a678d07d3430455a008d1
 #ifdef RGBLIGHT_ENABLE
 //Following line allows macro to read current RGB settings
 extern rgblight_config_t rgblight_config;
