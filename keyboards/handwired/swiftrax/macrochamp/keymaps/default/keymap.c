@@ -33,10 +33,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT(
-	KC_SLSH,	KC_W,  		KC_V,  	  KC_DEL,  TEXT1,
-	KC_BSPC,  	KC_B,  		KC_E,  	  KC_Z,    TEXT2,
-	KC_LSFT,  	KC_L,  		KC_G,  	  KC_D,
-	KC_LCTL,  	KC_LALT,	KC_SPC,   KC_H,    TEXT3),
+	KC_F13,	    KC_F14,   	KC_F15,   KC_F16,  TEXT1,
+	KC_F18,  	KC_F19,  	KC_F20,   KC_F21,  TEXT2,
+	KC_F22,  	KC_F23,  	KC_F24,   KC_MUTE,
+	KC_VOLD,  	KC_MPRV,	KC_MNXT,  KC_VOLU,    TEXT3),
 };
 
 void encoder_update_user(uint8_t index, bool clockwise) {
