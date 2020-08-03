@@ -20,8 +20,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
+<<<<<<< HEAD
 #define VENDOR_ID       0x04D8
 #define PRODUCT_ID      0xEB53
+=======
+#define VENDOR_ID       0x7161
+#define PRODUCT_ID      0x5239
+>>>>>>> 12fce9b88d8d70463ec32dc94e0abaa987bf389c
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Swiftrax
 #define PRODUCT         CowFish
