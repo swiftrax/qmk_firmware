@@ -51,5 +51,9 @@
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-/*EEPROM for via*/
+/* EEPROM for via */
 #define DYNAMIC_KEYMAP_LAYER_COUNT 3
+
+/* bootmagic row col assignment */
+#define BOOTMAGIC_LITE_ROW 1
+#define BOOTMAGIC_LITE_COLUMN 0
