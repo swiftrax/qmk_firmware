@@ -20,8 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x7161
-#define PRODUCT_ID      0x5163
+#define VENDOR_ID       0x04D8
+#define PRODUCT_ID      0xEAB1
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Swiftrax
 #define PRODUCT         UnSplit
@@ -45,5 +45,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
-/*EEPROM for via*/
-#define DYNAMIC_KEYMAP_LAYER_COUNT 3
