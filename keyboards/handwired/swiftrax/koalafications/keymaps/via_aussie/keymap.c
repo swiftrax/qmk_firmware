@@ -131,8 +131,6 @@ void oled_task_user(void) {
 
 uint16_t typing_mode
 
-__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
-
 void tap_code16_nomods(uint8_t kc) {
     uint8_t temp_mod = get_mods();
     clear_mods();
@@ -156,6 +154,8 @@ void tap_unicode_glyph_nomods(uint32_t glyph) {
     tap_unicode_glyph(glyph);
     set_mods(temp_mod);
 }
+
+__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
 
 typedef uint32_t (*translator_function_t)(bool is_shifted, uint32_t keycode);
 
@@ -307,6 +307,7 @@ bool process_record_aussie(uint16_t keycode, keyrecord_t *record) {
 
 enum custom_keycodes {
     KC_AUSSIE = SAFE_RANGE,
+    KC_NOMODE,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -320,4 +321,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if(typing_mode == KC_AUSSIE){
         return process_record_aussie(keycode, record);
     }
+    return process_record_keymap(keycode, record);
 }
