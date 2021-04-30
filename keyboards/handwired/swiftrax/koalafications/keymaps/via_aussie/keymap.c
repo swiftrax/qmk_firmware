@@ -19,6 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <string.h>
 #include <process_unicode_common.h>
 
+enum custom_keycodes {
+    KC_AUSSIE = SAFE_RANGE,
+    KC_NOMODE,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [0] = LAYOUT_all(
     KC_ESC , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,
@@ -26,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSLS,          KC_INS ,
     KC_CAPS, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, KC_ENT ,                   KC_INS ,
     KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B    ,KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT,                   KC_UP  , KC_END ,
-    KC_LCTL, KC_LGUI, KC_LALT,                           KC_SPC ,          KC_RALT, KC_RGUI, KC_RCTL,                    KC_LEFT, KC_DOWN, KC_RGHT),
+    KC_AUSSIE, KC_LGUI, KC_LALT,                           KC_SPC ,          KC_RALT, KC_RGUI, KC_RCTL,                    KC_LEFT, KC_DOWN, KC_RGHT),
    [1] = LAYOUT_all(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -129,7 +134,7 @@ void oled_task_user(void) {
 
 //END of my code
 
-//uint16_t typing_mode
+uint16_t typing_mode
 
 void tap_code16_nomods(uint8_t kc) {
     uint8_t temp_mod = get_mods();
@@ -305,18 +310,22 @@ bool process_record_aussie(uint16_t keycode, keyrecord_t *record) {
     return process_record_keymap(keycode, record);
 }
 
-enum custom_keycodes {
-    KC_AUSSIE = SAFE_RANGE,
-    KC_NOMODE,
-};
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_AUSSIE:
             if (record->event.pressed) {
-                return process_record_aussie(keycode, record);
+                typing_mode = keycode;
+            }
+            return false;
+        case KC_NOMODE:
+            if (record->event.pressed) {
+                typing_mode = keycode;
             }
             return false;
     }
+    if(typing_mode == KC_AUSSIE){
+        return process_record_aussie(keycode, record)
+    }
+
     return process_record_keymap(keycode, record);
 }
