@@ -129,7 +129,7 @@ void oled_task_user(void) {
 
 //END of my code
 
-uint16_t typing_mode
+//uint16_t typing_mode
 
 void tap_code16_nomods(uint8_t kc) {
     uint8_t temp_mod = get_mods();
@@ -314,12 +314,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_AUSSIE:
             if (record->event.pressed) {
-                typing_mode = keycode;
+                return process_record_aussie(keycode, record);
             }
             return false;
-
-    if(typing_mode == KC_AUSSIE){
-        return process_record_aussie(keycode, record);
     }
     return process_record_keymap(keycode, record);
 }
